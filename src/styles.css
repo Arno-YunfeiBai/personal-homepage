@@ -278,6 +278,25 @@ html[lang="zh-CN"] .hero-copy .lede {
   gap: 0.9rem;
 }
 
+.hero-facts {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.fact-card {
+  padding: 1rem 1rem 1.1rem;
+  border-radius: 1.4rem;
+}
+
+.fact-value {
+  margin: 0.55rem 0 0;
+  color: #e5edf7;
+  line-height: 1.55;
+  font-size: 0.96rem;
+}
+
 .cta-row {
   margin-top: 2rem;
 }
@@ -575,6 +594,10 @@ html[lang="zh-CN"] .hero-copy .lede {
   .about-section,
   .services-section,
   .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-facts {
     grid-template-columns: 1fr;
   }
 

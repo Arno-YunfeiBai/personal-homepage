@@ -114,6 +114,19 @@ const renderPage = () => {
               <span class="meta-pill">${content.identity.location}</span>
               <span class="meta-pill">${content.identity.availability}</span>
             </div>
+
+            <div class="hero-facts">
+              ${content.hero.quickFacts
+                .map(
+                  (fact) => `
+                    <article class="glass-panel fact-card">
+                      <p class="card-eyebrow">${fact.label}</p>
+                      <p class="fact-value">${fact.value}</p>
+                    </article>
+                  `,
+                )
+                .join("")}
+            </div>
           </div>
 
           <aside class="hero-visual reveal reveal-delay-1">

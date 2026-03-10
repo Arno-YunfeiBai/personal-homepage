@@ -28,6 +28,11 @@ export const siteContent = {
       snapshotEyebrow: "System Snapshot",
       snapshotNote:
         "Grounded in systems engineering, full-stack execution, and startup leadership across student, startup, and education environments.",
+      quickFacts: [
+        { label: "Current", value: "COO at Little Bird Intelligent Learning" },
+        { label: "Startup", value: "Former FliFli co-founder / CEO" },
+        { label: "Internship", value: "Technical Support Specialist at LeadIT" },
+      ],
     },
     sections: {
       about: "About",
@@ -147,6 +152,11 @@ export const siteContent = {
       snapshotEyebrow: "系统快照",
       snapshotNote:
         "核心能力建立在系统工程、全栈执行力，以及创业和教育业务中的实际带队经验之上。",
+      quickFacts: [
+        { label: "当前角色", value: "Little Bird Intelligent Learning COO" },
+        { label: "创业经历", value: "曾任 FliFli 联合创始人 / CEO" },
+        { label: "实习经历", value: "LeadIT 技术支持实习生" },
+      ],
     },
     sections: {
       about: "关于",
