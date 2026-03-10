@@ -116,31 +116,38 @@ const renderPage = () => {
             </div>
           </div>
 
-          <aside class="glass-panel snapshot reveal reveal-delay-1">
-            <div class="snapshot-head">
-              <span>${content.hero.snapshotLabel}</span>
-              <span class="status"><span class="status-dot"></span>${content.hero.status}</span>
+          <aside class="hero-visual reveal reveal-delay-1">
+            <div class="glass-panel portrait-card">
+              <img class="portrait-image" src="./src/assets/portrait.jpg" alt="Portrait of ${content.identity.name}" />
+              <div class="portrait-glow"></div>
             </div>
 
-            <div class="snapshot-card">
-              <p class="card-eyebrow">${content.hero.snapshotEyebrow}</p>
-              <div class="stats-list">
-                ${content.stats
-                  .map(
-                    (stat) => `
-                      <div class="stat-row">
-                        <p class="stat-value">${stat.value}</p>
-                        <p class="stat-label">${stat.label}</p>
-                      </div>
-                    `,
-                  )
-                  .join("")}
+            <div class="glass-panel snapshot">
+              <div class="snapshot-head">
+                <span>${content.hero.snapshotLabel}</span>
+                <span class="status"><span class="status-dot"></span>${content.hero.status}</span>
               </div>
-            </div>
 
-            <p class="snapshot-note">
-              ${content.hero.snapshotNote}
-            </p>
+              <div class="snapshot-card">
+                <p class="card-eyebrow">${content.hero.snapshotEyebrow}</p>
+                <div class="stats-list">
+                  ${content.stats
+                    .map(
+                      (stat) => `
+                        <div class="stat-row">
+                          <p class="stat-value">${stat.value}</p>
+                          <p class="stat-label">${stat.label}</p>
+                        </div>
+                      `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <p class="snapshot-note">
+                ${content.hero.snapshotNote}
+              </p>
+            </div>
           </aside>
         </section>
 
