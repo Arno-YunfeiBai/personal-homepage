@@ -517,15 +517,6 @@ const renderPage = () => {
           </div>
         </section>
 
-        <section class="section signal-section">
-          <div class="reveal">
-            <p class="eyebrow">${content.credibility.heading}</p>
-          </div>
-          <div class="signal-grid">
-            ${renderSignalCards(content.credibility.items)}
-          </div>
-        </section>
-
         <section class="section services-section" id="services">
           <div class="services-copy">
             <div class="reveal">
@@ -561,18 +552,6 @@ const renderPage = () => {
           </aside>
         </section>
 
-        <section class="section open-section" id="open-to">
-          <div class="reveal">
-            <p class="eyebrow">${content.sections.openTo}</p>
-            <h2>${content.openTo.heading}</h2>
-            <p class="lede">${content.openTo.intro}</p>
-          </div>
-
-          <div class="open-grid">
-            ${renderOpenToCards(content.openTo.items)}
-          </div>
-        </section>
-
         <section class="section projects-section" id="projects">
           <div class="reveal">
             <p class="eyebrow">${content.sections.projects}</p>
@@ -583,6 +562,27 @@ const renderPage = () => {
             ${content.projects.items
               .map((project, index) => renderProjectCard(content, project, index))
               .join("")}
+          </div>
+        </section>
+
+        <section class="section signal-section">
+          <div class="reveal">
+            <p class="eyebrow">${content.credibility.heading}</p>
+          </div>
+          <div class="signal-grid">
+            ${renderSignalCards(content.credibility.items)}
+          </div>
+        </section>
+
+        <section class="section open-section" id="open-to">
+          <div class="reveal">
+            <p class="eyebrow">${content.sections.openTo}</p>
+            <h2>${content.openTo.heading}</h2>
+            <p class="lede">${content.openTo.intro}</p>
+          </div>
+
+          <div class="open-grid">
+            ${renderOpenToCards(content.openTo.items)}
           </div>
         </section>
 

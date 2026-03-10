@@ -248,7 +248,7 @@ export const siteContent = {
     sections: {
       about: "定位",
       services: "我如何工作",
-      openTo: "开放方向",
+      openTo: "求职方向",
       projects: "精选项目",
       contact: "联系",
     },
@@ -269,7 +269,7 @@ export const siteContent = {
       body: "我最擅长的位置，是产品目标明确但实现过程复杂、节奏又快的环境。我做过创业，也做过教育业务运营，同时持续做工程和系统相关项目，所以我不是只会接需求做实现。我更习惯从系统结构、产品取舍、执行路径和团队节奏一起思考，尤其适合需要判断力和推进力并存的角色。",
     },
     credibility: {
-      heading: "可信信号",
+      heading: "背景与优势",
       items: [
         {
           title: "学术背景",
@@ -277,7 +277,7 @@ export const siteContent = {
             "悉尼大学 Advanced Computing，在读 Computer Science，预计 2026 年毕业，学术表现稳健。",
         },
         {
-          title: "Ownership",
+          title: "推进与担当",
           detail:
             "既做过创业项目联合创始人，也在业务场景里承担 COO 级别推进责任，不怕模糊和压力。",
         },
