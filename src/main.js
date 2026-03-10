@@ -179,13 +179,23 @@ const renderAiWorkflowSection = (content) => {
           </div>
 
           <div class="ai-workflow-grid">
-            <div class="glass-panel workflow-strip reveal reveal-delay-1 motion-depth">
-              <div class="workflow-strip-head">
-                <p class="card-eyebrow">${aiWorkflow.stripLabel}</p>
+            <div class="ai-workflow-main">
+              <div class="glass-panel workflow-strip reveal reveal-delay-1 motion-depth">
+                <div class="workflow-strip-head">
+                  <p class="card-eyebrow">${aiWorkflow.stripLabel}</p>
+                </div>
+                <div class="workflow-strip-grid">
+                  ${renderAiWorkflowStrip(aiWorkflow.stripItems || [])}
+                </div>
               </div>
-              <div class="workflow-strip-grid">
-                ${renderAiWorkflowStrip(aiWorkflow.stripItems || [])}
-              </div>
+
+              <aside class="glass-panel ai-highlights-card reveal motion-depth" style="--reveal-delay: 320ms;">
+                <p class="card-eyebrow">${aiWorkflow.highlights?.eyebrow ?? "Highlights"}</p>
+                <ul class="ai-highlights-list">
+                  ${renderAiWorkflowHighlights(aiWorkflow.highlights)}
+                </ul>
+                <p class="ai-highlights-note">${aiWorkflow.highlights?.note ?? ""}</p>
+              </aside>
             </div>
 
             <div class="ai-workflow-side">
@@ -200,14 +210,6 @@ const renderAiWorkflowSection = (content) => {
                   `,
                 )
                 .join("")}
-
-              <aside class="glass-panel ai-highlights-card reveal motion-depth" style="--reveal-delay: 320ms;">
-                <p class="card-eyebrow">${aiWorkflow.highlights?.eyebrow ?? "Highlights"}</p>
-                <ul class="ai-highlights-list">
-                  ${renderAiWorkflowHighlights(aiWorkflow.highlights)}
-                </ul>
-                <p class="ai-highlights-note">${aiWorkflow.highlights?.note ?? ""}</p>
-              </aside>
             </div>
           </div>
         </section>

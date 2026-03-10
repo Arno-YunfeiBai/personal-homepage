@@ -678,6 +678,12 @@ a {
   align-items: start;
 }
 
+.ai-workflow-main,
+.ai-workflow-side {
+  display: grid;
+  gap: 1rem;
+}
+
 .workflow-strip,
 .ai-note-card,
 .ai-highlights-card {
@@ -725,11 +731,6 @@ a {
   margin: 0.75rem 0 0;
   color: var(--muted);
   line-height: 1.82;
-}
-
-.ai-workflow-side {
-  display: grid;
-  gap: 1rem;
 }
 
 .ai-note-card {
