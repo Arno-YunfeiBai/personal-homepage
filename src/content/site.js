@@ -149,6 +149,9 @@ export const siteContent = {
       heading:
         "Each project below shows how I approach hard constraints, not just what I built.",
       caseStudyLabel: "Case Study",
+      detailLabel: "Project Notes",
+      openDetailsLabel: "Open case study",
+      closeDetailsLabel: "Hide details",
       challengeLabel: "Hard problem",
       ownershipLabel: "What I handled",
       signalLabel: "Why it matters",
@@ -355,6 +358,9 @@ export const siteContent = {
     projects: {
       heading: "下面这些项目更能说明我如何处理难问题，而不只是列做过什么。",
       caseStudyLabel: "案例",
+      detailLabel: "项目拆解",
+      openDetailsLabel: "展开案例",
+      closeDetailsLabel: "收起细节",
       challengeLabel: "难点是什么",
       ownershipLabel: "我负责什么",
       signalLabel: "这说明什么",
