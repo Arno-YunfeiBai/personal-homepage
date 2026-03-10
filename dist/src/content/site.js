@@ -37,6 +37,7 @@ export const siteContent = {
     sections: {
       about: "Positioning",
       services: "How I Work",
+      aiWorkflow: "AI In Practice",
       openTo: "Open To",
       projects: "Selected Projects",
       contact: "Contact",
@@ -103,6 +104,54 @@ export const siteContent = {
             "Because I’ve worked in startup and operations environments, I’m comfortable stepping into unclear situations, structuring the work, and driving toward a concrete outcome.",
         },
       ],
+    },
+    aiWorkflow: {
+      heading: "AI sits inside my workflow as a force multiplier, not a substitute for judgment.",
+      intro:
+        "I use AI where it compresses research, exploration, drafting, and analysis loops. The pattern is consistent: use it to widen options and accelerate first-pass work, then apply engineering judgment, verification, and system thinking before anything ships.",
+      stripLabel: "Practical Workflow",
+      stripItems: [
+        {
+          title: "Research",
+          detail: "Map unfamiliar domains quickly, compare approaches, and turn rough questions into structured decision notes.",
+        },
+        {
+          title: "Prototype",
+          detail: "Use AI-assisted scaffolding to test product ideas, interaction flows, and technical spikes without pretending the first draft is production-ready.",
+        },
+        {
+          title: "Analyze",
+          detail: "Summarize documents, extract signal from messy inputs, and speed up synthesis when there is too much context to process manually.",
+        },
+        {
+          title: "Refine",
+          detail: "Pressure-test logic, tighten communication, and convert loose thinking into cleaner execution plans or implementation tasks.",
+        },
+      ],
+      cards: [
+        {
+          eyebrow: "Where It Fits",
+          title: "Useful before code, during iteration, and around delivery",
+          body:
+            "I get the most value from AI in early research, prototyping, writing, and workflow design. It helps reduce blank-page friction and shortens the path from idea to testable artifact, especially when speed matters but the problem still needs structure.",
+        },
+        {
+          eyebrow: "Operating Principle",
+          title: "Pragmatic, verified, and builder-oriented",
+          body:
+            "I do not treat AI output as authority. I use it as a collaborator for drafts, alternatives, and compression, then verify important details, check assumptions, and make the final call based on system constraints, product context, and engineering tradeoffs.",
+        },
+      ],
+      highlights: {
+        eyebrow: "Relevant Exposure",
+        items: [
+          "AI-assisted workflows for research, prototyping, analysis, and content acceleration",
+          "Azure AI fundamentals exposure",
+          "NVIDIA / Coursera coursework covering AI infrastructure and operations fundamentals",
+        ],
+        note:
+          "The value here is practical leverage: understanding where AI helps a technical team move faster, and where rigor still has to come from the builder.",
+      },
     },
     skills: [
       "Systems Programming",
@@ -248,6 +297,7 @@ export const siteContent = {
     sections: {
       about: "定位",
       services: "我如何工作",
+      aiWorkflow: "AI 工作流",
       openTo: "求职方向",
       projects: "精选项目",
       contact: "联系",
@@ -313,6 +363,54 @@ export const siteContent = {
             "因为经历过创业和运营场景，我对不确定性比较适应。问题不够清楚时，我更倾向于主动拆解、补结构、把事情推进到结果。",
         },
       ],
+    },
+    aiWorkflow: {
+      heading: "AI 在我的工作流里是效率杠杆，不是替代判断力的捷径。",
+      intro:
+        "我会把 AI 放在最适合它的位置上: 加速研究、探索、草稿生成、分析整理和流程推进。核心方法一直很明确: 先用 AI 扩大备选路径和首轮产出，再用工程判断、事实校验和系统思维决定什么能真正进入执行。",
+      stripLabel: "实际工作流",
+      stripItems: [
+        {
+          title: "Research",
+          detail: "快速进入陌生领域，比较方案，把模糊问题整理成更可执行的判断框架。",
+        },
+        {
+          title: "Prototype",
+          detail: "借助 AI 辅助搭建原型和技术试验，加快从想法到可测试版本的速度，但不会把首稿当成可直接上线的答案。",
+        },
+        {
+          title: "Analyze",
+          detail: "整理长文档和复杂输入，提取重点，帮助自己在信息量很大时更快完成归纳和判断。",
+        },
+        {
+          title: "Refine",
+          detail: "用来校对逻辑、压缩表达、优化工作流，把原本松散的思路收敛成更清晰的执行任务。",
+        },
+      ],
+      cards: [
+        {
+          eyebrow: "它适合放在哪",
+          title: "前期研究、中途迭代、交付前整理都能受益",
+          body:
+            "我目前从 AI 获得的最大价值，主要在前期研究、原型试验、写作整理和 workflow 设计上。它能明显降低空白页成本，让我更快把一个想法推进成可讨论、可验证的东西。",
+        },
+        {
+          eyebrow: "我怎么使用它",
+          title: "务实、校验、以 builder 视角落地",
+          body:
+            "我不会把 AI 输出当作权威结论。更常见的用法是把它当成草稿协作者、备选方案生成器和信息压缩工具；真正进入执行之前，仍然需要自己验证关键事实、检查假设，并结合系统约束和产品目标做最终判断。",
+        },
+      ],
+      highlights: {
+        eyebrow: "相关基础",
+        items: [
+          "AI 辅助工作流实践，覆盖 research、prototyping、analysis 与内容/流程加速",
+          "接触过 Azure AI fundamentals",
+          "完成过 NVIDIA / Coursera 的 AI 基础设施与运维基础内容",
+        ],
+        note:
+          "这里真正有价值的，不是“会不会谈 AI”，而是知道它在技术团队里该如何被正确使用，哪里能提速，哪里仍然必须靠严谨判断。",
+      },
     },
     skills: [
       "系统编程",

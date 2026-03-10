@@ -195,6 +195,7 @@ a {
 .hero,
 .about-section,
 .services-section,
+.ai-workflow-section,
 .contact-section {
   display: grid;
   gap: 2rem;
@@ -583,6 +584,10 @@ a {
   gap: 1rem;
 }
 
+.ai-workflow-section {
+  gap: 1.5rem;
+}
+
 .signal-grid,
 .open-grid {
   display: grid;
@@ -664,6 +669,110 @@ a {
 
 .services-section {
   grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+}
+
+.ai-workflow-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.workflow-strip,
+.ai-note-card,
+.ai-highlights-card {
+  border-radius: 1.85rem;
+}
+
+.workflow-strip {
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at top right, rgba(103, 232, 249, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(8, 16, 38, 0.88), rgba(6, 11, 28, 0.92));
+}
+
+.workflow-strip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.workflow-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.workflow-step,
+.ai-note-card,
+.ai-highlights-card {
+  padding: 1.25rem;
+}
+
+.workflow-step {
+  min-height: 100%;
+  border-radius: 1.45rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 100%),
+    rgba(4, 9, 24, 0.68);
+}
+
+.workflow-step p:last-child,
+.ai-note-card p:last-child,
+.ai-highlights-note {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  line-height: 1.82;
+}
+
+.ai-workflow-side {
+  display: grid;
+  gap: 1rem;
+}
+
+.ai-note-card {
+  background: linear-gradient(180deg, rgba(10, 20, 44, 0.82), rgba(7, 14, 33, 0.86));
+}
+
+.ai-note-card h3 {
+  margin: 0.72rem 0 0;
+  font-size: 1.35rem;
+  color: #f8fafc;
+}
+
+.ai-highlights-card {
+  background:
+    radial-gradient(circle at top left, rgba(142, 232, 247, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(9, 17, 38, 0.88), rgba(5, 10, 24, 0.92));
+}
+
+.ai-highlights-list {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.ai-highlights-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: #dbe7f5;
+  line-height: 1.72;
+}
+
+.ai-highlights-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #8ee8f7;
+  box-shadow: 0 0 16px rgba(142, 232, 247, 0.5);
 }
 
 .service-list,
@@ -969,13 +1078,15 @@ a {
   .hero,
   .about-section,
   .services-section,
+  .ai-workflow-grid,
   .contact-section {
     grid-template-columns: 1fr;
   }
 
   .hero-facts,
   .signal-grid,
-  .open-grid {
+  .open-grid,
+  .workflow-strip-grid {
     grid-template-columns: 1fr;
   }
 
