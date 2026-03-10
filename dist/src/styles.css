@@ -196,13 +196,18 @@ a {
 }
 
 html[lang="zh-CN"] .hero {
-  align-items: start;
-  padding-top: 2.5rem;
+  align-items: stretch;
+  padding-top: 1.25rem;
 }
 
 .hero-visual {
   display: grid;
   gap: 1.4rem;
+  align-content: start;
+}
+
+html[lang="zh-CN"] .hero-visual {
+  grid-template-rows: minmax(420px, auto) auto;
 }
 
 .hero-copy h1,
@@ -252,7 +257,7 @@ html[lang="zh-CN"] .section h2 {
 }
 
 html[lang="zh-CN"] .hero-copy {
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 html[lang="zh-CN"] .hero-copy .eyebrow {
@@ -580,6 +585,10 @@ html[lang="zh-CN"] .hero-copy .lede {
 
   html[lang="zh-CN"] .hero-copy {
     padding-top: 0;
+  }
+
+  html[lang="zh-CN"] .hero-visual {
+    grid-template-rows: none;
   }
 
   .portrait-card {
