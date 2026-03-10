@@ -154,14 +154,65 @@ const renderAiWorkflowStrip = (items) =>
     )
     .join("");
 
-const renderAiWorkflowHighlights = (highlights) =>
-  highlights.items
+const renderAiWorkflowHighlights = (highlights = { items: [] }) =>
+  (highlights.items || [])
     .map(
       (item) => `
         <li>${item}</li>
       `,
     )
     .join("");
+
+const renderAiWorkflowSection = (content) => {
+  const aiWorkflow = content.aiWorkflow;
+
+  if (!aiWorkflow) {
+    return "";
+  }
+
+  return `
+        <section class="section ai-workflow-section" id="ai-workflow">
+          <div class="ai-workflow-header reveal">
+            <p class="eyebrow">${content.sections.aiWorkflow ?? "AI Workflow"}</p>
+            <h2>${aiWorkflow.heading}</h2>
+            <p class="lede">${aiWorkflow.intro}</p>
+          </div>
+
+          <div class="ai-workflow-grid">
+            <div class="glass-panel workflow-strip reveal reveal-delay-1 motion-depth">
+              <div class="workflow-strip-head">
+                <p class="card-eyebrow">${aiWorkflow.stripLabel}</p>
+              </div>
+              <div class="workflow-strip-grid">
+                ${renderAiWorkflowStrip(aiWorkflow.stripItems || [])}
+              </div>
+            </div>
+
+            <div class="ai-workflow-side">
+              ${(aiWorkflow.cards || [])
+                .map(
+                  (card, index) => `
+                    <article class="glass-panel ai-note-card reveal motion-depth" style="--reveal-delay: ${120 + index * 100}ms;">
+                      <p class="card-eyebrow">${card.eyebrow}</p>
+                      <h3>${card.title}</h3>
+                      <p>${card.body}</p>
+                    </article>
+                  `,
+                )
+                .join("")}
+
+              <aside class="glass-panel ai-highlights-card reveal motion-depth" style="--reveal-delay: 320ms;">
+                <p class="card-eyebrow">${aiWorkflow.highlights?.eyebrow ?? "Highlights"}</p>
+                <ul class="ai-highlights-list">
+                  ${renderAiWorkflowHighlights(aiWorkflow.highlights)}
+                </ul>
+                <p class="ai-highlights-note">${aiWorkflow.highlights?.note ?? ""}</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+  `;
+};
 
 const renderProjectDetails = (content, project, index) => `
   <div class="project-disclosure">
@@ -607,46 +658,7 @@ const renderPage = () => {
           </div>
         </section>
 
-        <section class="section ai-workflow-section" id="ai-workflow">
-          <div class="ai-workflow-header reveal">
-            <p class="eyebrow">${content.sections.aiWorkflow}</p>
-            <h2>${content.aiWorkflow.heading}</h2>
-            <p class="lede">${content.aiWorkflow.intro}</p>
-          </div>
-
-          <div class="ai-workflow-grid">
-            <div class="glass-panel workflow-strip reveal reveal-delay-1 motion-depth">
-              <div class="workflow-strip-head">
-                <p class="card-eyebrow">${content.aiWorkflow.stripLabel}</p>
-              </div>
-              <div class="workflow-strip-grid">
-                ${renderAiWorkflowStrip(content.aiWorkflow.stripItems)}
-              </div>
-            </div>
-
-            <div class="ai-workflow-side">
-              ${content.aiWorkflow.cards
-                .map(
-                  (card, index) => `
-                    <article class="glass-panel ai-note-card reveal motion-depth" style="--reveal-delay: ${120 + index * 100}ms;">
-                      <p class="card-eyebrow">${card.eyebrow}</p>
-                      <h3>${card.title}</h3>
-                      <p>${card.body}</p>
-                    </article>
-                  `,
-                )
-                .join("")}
-
-              <aside class="glass-panel ai-highlights-card reveal motion-depth" style="--reveal-delay: 320ms;">
-                <p class="card-eyebrow">${content.aiWorkflow.highlights.eyebrow}</p>
-                <ul class="ai-highlights-list">
-                  ${renderAiWorkflowHighlights(content.aiWorkflow.highlights)}
-                </ul>
-                <p class="ai-highlights-note">${content.aiWorkflow.highlights.note}</p>
-              </aside>
-            </div>
-          </div>
-        </section>
+        ${renderAiWorkflowSection(content)}
 
         <section class="glass-panel section contact-section reveal" id="contact">
           <div>
