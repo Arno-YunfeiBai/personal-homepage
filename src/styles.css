@@ -195,6 +195,11 @@ a {
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
 }
 
+html[lang="zh-CN"] .hero {
+  align-items: start;
+  padding-top: 2.5rem;
+}
+
 .hero-visual {
   display: grid;
   gap: 1.4rem;
@@ -244,6 +249,18 @@ html[lang="zh-CN"] .section h2 {
 .lede {
   max-width: 42rem;
   font-size: 1.1rem;
+}
+
+html[lang="zh-CN"] .hero-copy {
+  padding-top: 4rem;
+}
+
+html[lang="zh-CN"] .hero-copy .eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+html[lang="zh-CN"] .hero-copy .lede {
+  max-width: 34rem;
 }
 
 .cta-row,
@@ -554,6 +571,15 @@ html[lang="zh-CN"] .section h2 {
   .services-section,
   .contact-section {
     grid-template-columns: 1fr;
+  }
+
+  html[lang="zh-CN"] .hero {
+    padding-top: 0;
+    align-items: center;
+  }
+
+  html[lang="zh-CN"] .hero-copy {
+    padding-top: 0;
   }
 
   .portrait-card {
