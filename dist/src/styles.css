@@ -694,3 +694,151 @@ html[lang="zh-CN"] .hero-copy .lede {
     flex-direction: column;
   }
 }
+
+.signal-section,
+.open-section {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.signal-grid,
+.open-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.signal-card,
+.open-card {
+  padding: 1.4rem;
+  border-radius: 1.6rem;
+}
+
+.signal-card p,
+.open-card p,
+.project-detail p,
+.contact-copy {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.open-card h3,
+.project-detail-label {
+  margin: 0;
+  color: #fff;
+}
+
+.project-summary {
+  margin-bottom: 1rem;
+}
+
+.project-detail-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.project-detail {
+  padding: 0.95rem 1rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-detail-label {
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c4f1ff;
+}
+
+.hero-zh {
+  min-height: 78vh;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+}
+
+.hero-zh-main,
+.hero-zh-side {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-zh-copy {
+  padding-top: 0.5rem;
+}
+
+.hero-zh-copy h1 {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+  max-width: 10ch;
+}
+
+.hero-zh-statement,
+.hero-zh-highlight-value {
+  color: #e5edf7;
+  line-height: 1.75;
+}
+
+.hero-zh-statement {
+  margin: 1.2rem 0 0;
+  max-width: 36rem;
+  font-size: 1.08rem;
+}
+
+.hero-zh-rhythm,
+.hero-zh-highlight {
+  padding: 1.35rem 1.45rem;
+  border-radius: 1.7rem;
+}
+
+.hero-zh-lines {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.hero-zh-lines p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.82;
+}
+
+.hero-zh-actions .lede {
+  max-width: 38rem;
+}
+
+.hero-zh-highlight-value {
+  margin: 0.65rem 0 0;
+  font-size: 1rem;
+}
+
+.hero-facts-zh {
+  margin-top: 0;
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 960px) {
+  .signal-grid,
+  .open-grid,
+  .hero-zh {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-zh-copy,
+  .hero-zh-main,
+  .hero-zh-side {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-zh-copy h1 {
+    font-size: clamp(2.5rem, 12vw, 3.6rem);
+    max-width: 9ch;
+  }
+}

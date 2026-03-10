@@ -1,11 +1,14 @@
 :root {
   color-scheme: dark;
   --bg: #060816;
-  --panel: rgba(9, 14, 35, 0.72);
+  --panel: rgba(9, 14, 35, 0.74);
+  --panel-strong: rgba(6, 11, 28, 0.88);
   --panel-border: rgba(255, 255, 255, 0.09);
   --grid: rgba(125, 211, 252, 0.08);
   --text: #e2e8f0;
   --muted: #94a3b8;
+  --accent: #8ee8f7;
+  --accent-strong: #d7fbff;
   --font-display: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
   --font-body: "Satoshi", "Inter", "SF Pro Text", sans-serif;
 }
@@ -22,9 +25,9 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top, rgba(8, 145, 178, 0.18), transparent 30%),
-    radial-gradient(circle at 85% 20%, rgba(192, 38, 211, 0.12), transparent 22%),
-    linear-gradient(180deg, #08101f 0%, #060816 45%, #05070f 100%);
+    radial-gradient(circle at top, rgba(8, 145, 178, 0.2), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(217, 70, 239, 0.12), transparent 22%),
+    linear-gradient(180deg, #08101f 0%, #060816 48%, #05070f 100%);
   color: var(--text);
   font-family: var(--font-body);
 }
@@ -39,7 +42,7 @@ a {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #f8fafc 0%, #a5f3fc 45%, #67e8f9 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #c7fbff 40%, #67e8f9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -61,7 +64,7 @@ a {
     linear-gradient(to right, var(--grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
   background-size: 64px 64px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 80%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 80%);
 }
 
 .page-shell {
@@ -103,7 +106,7 @@ a {
   padding: 2rem 0 4rem;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 5.25rem;
 }
 
 .topbar {
@@ -163,10 +166,11 @@ a {
 
 .brand,
 .eyebrow,
-.card-eyebrow {
+.card-eyebrow,
+.project-detail-label {
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
 }
 
 .brand {
@@ -176,9 +180,10 @@ a {
 }
 
 .eyebrow,
-.card-eyebrow {
+.card-eyebrow,
+.project-detail-label {
   font-size: 0.74rem;
-  color: rgba(165, 243, 252, 0.7);
+  color: rgba(165, 243, 252, 0.72);
 }
 
 .hero,
@@ -195,19 +200,10 @@ a {
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
 }
 
-html[lang="zh-CN"] .hero {
-  align-items: stretch;
-  padding-top: 1.25rem;
-}
-
 .hero-visual {
   display: grid;
   gap: 1.4rem;
   align-content: start;
-}
-
-html[lang="zh-CN"] .hero-visual {
-  grid-template-rows: minmax(420px, auto) auto;
 }
 
 .hero-copy h1,
@@ -219,53 +215,30 @@ html[lang="zh-CN"] .hero-visual {
 }
 
 .hero-copy h1 {
-  font-size: clamp(3.5rem, 7vw, 6rem);
-  max-width: 13ch;
-}
-
-html[lang="zh-CN"] .hero-copy h1 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.08;
-  letter-spacing: -0.06em;
+  font-size: clamp(3.4rem, 7vw, 5.9rem);
   max-width: 11ch;
 }
 
 .section h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 4vw, 3.1rem);
   max-width: 18ch;
-}
-
-html[lang="zh-CN"] .section h2 {
-  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
-  line-height: 1.14;
-  letter-spacing: -0.05em;
-  max-width: 14ch;
 }
 
 .lede,
 .about-card p,
 .service-card p,
 .project-card p,
-.snapshot-note {
+.snapshot-note,
+.signal-card p,
+.open-card p,
+.contact-copy {
   color: var(--muted);
-  line-height: 1.9;
+  line-height: 1.85;
 }
 
 .lede {
-  max-width: 42rem;
-  font-size: 1.1rem;
-}
-
-html[lang="zh-CN"] .hero-copy {
-  padding-top: 2rem;
-}
-
-html[lang="zh-CN"] .hero-copy .eyebrow {
-  margin-bottom: 0.4rem;
-}
-
-html[lang="zh-CN"] .hero-copy .lede {
-  max-width: 34rem;
+  max-width: 44rem;
+  font-size: 1.08rem;
 }
 
 .cta-row,
@@ -285,6 +258,84 @@ html[lang="zh-CN"] .hero-copy .lede {
   gap: 0.9rem;
 }
 
+.hero-zh {
+  min-height: auto;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 1.8rem;
+}
+
+.hero-zh-main,
+.hero-zh-side {
+  display: grid;
+  gap: 1.2rem;
+  align-content: start;
+}
+
+.hero-zh-copy {
+  padding-top: 1.5rem;
+}
+
+.hero-zh-copy h1 {
+  margin: 0.7rem 0 0;
+  max-width: 10ch;
+  font-size: clamp(3rem, 6vw, 4.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+
+.hero-zh-statement,
+.hero-zh-highlight-value {
+  margin: 0;
+  color: #f8fafc;
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+.hero-zh-statement {
+  margin-top: 1.25rem;
+  max-width: 18ch;
+  font-size: clamp(1.35rem, 2.5vw, 1.95rem);
+  line-height: 1.42;
+}
+
+.hero-zh-rhythm,
+.hero-zh-highlight {
+  padding: 1.5rem;
+  border-radius: 1.75rem;
+}
+
+.hero-zh-rhythm {
+  background: linear-gradient(180deg, rgba(10, 20, 44, 0.8), rgba(7, 14, 32, 0.9));
+}
+
+.hero-zh-lines {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.hero-zh-lines p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.hero-zh-actions .lede {
+  max-width: 34rem;
+}
+
+.hero-zh-highlight-value {
+  margin-top: 0.7rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.hero-facts-zh {
+  margin-top: 0;
+  grid-template-columns: 1fr;
+}
+
 .fact-card {
   padding: 1rem 1rem 1.1rem;
   border-radius: 1.4rem;
@@ -297,10 +348,7 @@ html[lang="zh-CN"] .hero-copy .lede {
   font-size: 0.96rem;
 }
 
-.cta-row {
-  margin-top: 2rem;
-}
-
+.cta-row,
 .meta-row {
   margin-top: 2rem;
 }
@@ -323,13 +371,16 @@ html[lang="zh-CN"] .hero-copy .lede {
 
 .button,
 .pill-link {
-  padding: 0.9rem 1.35rem;
+  padding: 0.92rem 1.35rem;
   font-size: 0.95rem;
   font-weight: 600;
 }
 
 .button:hover,
 .pill-link:hover,
+.service-card:hover,
+.signal-card:hover,
+.open-card:hover,
 .project-card:hover {
   transform: translateY(-2px);
 }
@@ -346,7 +397,8 @@ html[lang="zh-CN"] .hero-copy .lede {
 .button-secondary,
 .pill-link,
 .meta-pill,
-.skill-pill {
+.skill-pill,
+.tag {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);
   color: #e2e8f0;
@@ -366,7 +418,7 @@ html[lang="zh-CN"] .hero-copy .lede {
 .meta-pill,
 .skill-pill,
 .tag {
-  padding: 0.7rem 1rem;
+  padding: 0.68rem 1rem;
   font-size: 0.9rem;
 }
 
@@ -470,18 +522,19 @@ html[lang="zh-CN"] .hero-copy .lede {
 .stat-value,
 .stat-label,
 .service-card h3,
-.project-card h3 {
+.project-card h3,
+.open-card h3 {
   margin: 0;
 }
 
 .stat-value {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #fff;
   font-family: var(--font-display);
 }
 
 .stat-label {
-  max-width: 13rem;
+  max-width: 15rem;
   text-align: right;
   color: #94a3b8;
 }
@@ -491,7 +544,41 @@ html[lang="zh-CN"] .hero-copy .lede {
 }
 
 .about-section {
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.signal-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.signal-grid,
+.open-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.signal-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.signal-card,
+.open-card,
+.service-card,
+.project-card {
+  padding: 1.45rem;
+  border-radius: 1.75rem;
+}
+
+.signal-card {
+  background: linear-gradient(180deg, rgba(10, 20, 44, 0.82), rgba(9, 16, 36, 0.7));
+}
+
+.signal-card p:last-child,
+.open-card p,
+.project-detail p:last-child,
+.project-summary {
+  margin: 0.7rem 0 0;
 }
 
 .services-section {
@@ -504,28 +591,50 @@ html[lang="zh-CN"] .hero-copy .lede {
   gap: 1rem;
 }
 
-.service-card,
-.project-card {
-  padding: 1.5rem;
-  border-radius: 1.75rem;
+.open-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.project-card h3,
 .service-card h3,
-.project-card h3 {
-  font-size: 1.5rem;
+.open-card h3 {
+  font-size: 1.45rem;
   color: #fff;
 }
 
 .projects-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .project-card {
+  display: grid;
+  gap: 1rem;
   min-height: 100%;
+  background: linear-gradient(180deg, rgba(9, 17, 38, 0.82), rgba(7, 12, 29, 0.86));
+}
+
+.project-summary {
+  color: #c8d5e6;
+}
+
+.project-detail-list {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.project-detail {
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-detail p {
+  margin: 0;
 }
 
 .contact-section {
   align-items: center;
+  background: linear-gradient(180deg, rgba(12, 21, 45, 0.86), var(--panel-strong));
 }
 
 .contact-actions {
@@ -533,6 +642,10 @@ html[lang="zh-CN"] .hero-copy .lede {
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
+}
+
+.contact-copy {
+  max-width: 34rem;
 }
 
 .reveal {
@@ -550,6 +663,7 @@ html[lang="zh-CN"] .hero-copy .lede {
     opacity: 0;
     transform: translate3d(0, 24px, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -561,6 +675,7 @@ html[lang="zh-CN"] .hero-copy .lede {
   100% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(0, -24px, 0);
   }
@@ -572,6 +687,7 @@ html[lang="zh-CN"] .hero-copy .lede {
     opacity: 0.6;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.08);
@@ -589,6 +705,16 @@ html[lang="zh-CN"] .hero-copy .lede {
   }
 }
 
+@media (max-width: 1080px) {
+  .signal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 960px) {
   .hero,
   .about-section,
@@ -597,21 +723,14 @@ html[lang="zh-CN"] .hero-copy .lede {
     grid-template-columns: 1fr;
   }
 
-  .hero-facts {
+  .hero-facts,
+  .signal-grid,
+  .open-grid {
     grid-template-columns: 1fr;
   }
 
-  html[lang="zh-CN"] .hero {
+  .hero-zh-copy {
     padding-top: 0;
-    align-items: center;
-  }
-
-  html[lang="zh-CN"] .hero-copy {
-    padding-top: 0;
-  }
-
-  html[lang="zh-CN"] .hero-visual {
-    grid-template-rows: none;
   }
 
   .portrait-card {
@@ -623,13 +742,9 @@ html[lang="zh-CN"] .hero-copy .lede {
     object-position: center 22%;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
   .layout {
     width: min(1120px, calc(100% - 1.25rem));
-    gap: 4.5rem;
+    gap: 4.2rem;
   }
 
   .contact-section,
@@ -646,14 +761,14 @@ html[lang="zh-CN"] .hero-copy .lede {
 }
 
 @media (max-width: 640px) {
-  html[lang="zh-CN"] .hero-copy h1 {
-    font-size: clamp(2.5rem, 12vw, 3.6rem);
-    max-width: 9ch;
+  .hero-copy h1,
+  .hero-zh-copy h1 {
+    font-size: clamp(2.6rem, 12vw, 3.8rem);
+    max-width: 10ch;
   }
 
-  html[lang="zh-CN"] .section h2 {
-    font-size: clamp(1.6rem, 8vw, 2.2rem);
-    max-width: 11ch;
+  .hero-zh-statement {
+    max-width: none;
   }
 
   .layout {
@@ -692,5 +807,18 @@ html[lang="zh-CN"] .hero-copy .lede {
   .meta-row,
   .contact-links {
     flex-direction: column;
+  }
+
+  .signal-card,
+  .open-card,
+  .service-card,
+  .project-card,
+  .snapshot,
+  .about-card,
+  .skills-card,
+  .contact-section,
+  .portrait-card {
+    padding: 1.2rem;
+    border-radius: 1.4rem;
   }
 }
