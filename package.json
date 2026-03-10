@@ -1,0 +1,11 @@
+{
+  "name": "personal-homepage",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "build": "rm -rf dist && mkdir -p dist/src/content && cp index.html dist/index.html && cp src/styles.css dist/src/styles.css && cp src/main.js dist/src/main.js && cp src/content/site.js dist/src/content/site.js",
+    "preview": "cd dist && python3 -m http.server 4174"
+  }
+}
