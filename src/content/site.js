@@ -118,7 +118,11 @@ export const siteContent = {
       heading:
         "If you’re building a startup, hiring for an internship, or want to talk through a serious product idea, I’m open to the conversation.",
       email: "sirobai0122@gmail.com",
-      links: [{ label: "Email", href: "mailto:sirobai0122@gmail.com" }],
+      links: [
+        { label: "Email", href: "mailto:sirobai0122@gmail.com" },
+        { label: "GitHub", href: "https://github.com/Arno-YunfeiBai" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/yunfei-bai-788812309" },
+      ],
     },
   },
   zh: {
@@ -228,7 +232,11 @@ export const siteContent = {
       heading:
         "如果你在找实习生、创业合作者，或想认真聊一个项目，欢迎直接联系我。",
       email: "sirobai0122@gmail.com",
-      links: [{ label: "邮箱", href: "mailto:sirobai0122@gmail.com" }],
+      links: [
+        { label: "邮箱", href: "mailto:sirobai0122@gmail.com" },
+        { label: "GitHub", href: "https://github.com/Arno-YunfeiBai" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/yunfei-bai-788812309" },
+      ],
     },
   },
 };
